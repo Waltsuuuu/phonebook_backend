@@ -37,7 +37,8 @@ app.get('/api/persons/:id', (request, response) => {
     const id = request.params.id
     const person = persons.find(person => person.id === id)
 
-    response.send(person)
+    if (person) { response.send(person)
+    } else (response.status(404).end())
 })
 
 

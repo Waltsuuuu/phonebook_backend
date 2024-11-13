@@ -4,6 +4,8 @@ const cors = require("cors");
 const dotenv = require('dotenv')
 dotenv.config()
 
+const Person = require('./models/person')
+
 morgan.token('body', function (req, res) { return JSON.stringify(req.body) })
 
 const app = express();
@@ -15,7 +17,11 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :b
 // Tiny output
 // :method :url :status :res[content-length] - :response-time ms
 
-
+app.get('/api/persons', (request, response) => {
+  Person.find({}).then(persons => {
+    response.json(persons)
+  })
+})
 
 
 

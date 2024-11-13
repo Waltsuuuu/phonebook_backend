@@ -3,4 +3,4 @@ https://phonebook-backend-b42w.onrender.com/
 <br/><br/>
 STEP 3.14 DONE
 <br/>
-Everything works as expected, except updating number if person is already on the database.
+Adding entries works and data is sent to mongoDB. Updating and deleting not yet supported. 
